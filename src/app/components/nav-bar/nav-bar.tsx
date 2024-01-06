@@ -2,13 +2,14 @@
 import { Link } from 'react-router-dom';
 import { Flex, Button, IconButton } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { useState } from 'react';
+import { hide, show } from '../../../redux/slices/navbar/navbar-menu-display.slice';
+import { useAppSelector, useAppDispatch } from '../../../hooks'
 
-/* eslint-disable-next-line */
 export interface NavBarProps {}
 
 export function NavBar(props: NavBarProps) {
-  const [display, changeDisplay] = useState('none');
+  const display = useAppSelector((state) => state.navbarMenuDisplay.value);
+  const dispatch = useAppDispatch();
 
   return (
     <Flex>
@@ -53,7 +54,7 @@ export function NavBar(props: NavBarProps) {
             size="lg"
             mr={2}
             icon={<HamburgerIcon />}
-            onClick={() => changeDisplay('flex')}
+            onClick={() => dispatch(show())}
           />
         </Flex>
       </Flex>
@@ -77,7 +78,7 @@ export function NavBar(props: NavBarProps) {
             aria-label="Open Menu"
             size="lg"
             icon={<CloseIcon />}
-            onClick={() => changeDisplay('none')}
+            onClick={() => dispatch(hide())}
           />
         </Flex>
 
