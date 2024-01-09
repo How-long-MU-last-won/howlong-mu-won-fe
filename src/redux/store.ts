@@ -1,9 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import navBarMenuDisplayReducer from './slices/navbar/navbar-menu-display.slice';
+import carouselReducer from './slices/landing/carousel.slice';
+import trackReducer from './slices/landing/track.slice';
+import itemReducer from './slices/landing/item.slice';
 
 export const store = configureStore({
   reducer: {
     navbarMenuDisplay: navBarMenuDisplayReducer,
+    carousel: carouselReducer,
+    track: trackReducer,
+    carouselItem: itemReducer,
   },
 })
 

@@ -1,9 +1,10 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
+import theme from './theme';
 
 import App from './app/app';
 
@@ -14,7 +15,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <ChakraProvider>
+      <ChakraProvider theme={extendTheme(theme)}>
         <Provider store={store}>
           <App />
         </Provider>
