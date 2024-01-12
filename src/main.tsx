@@ -1,3 +1,4 @@
+import '@fontsource/bebas-neue';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';

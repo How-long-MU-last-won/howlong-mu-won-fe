@@ -2,7 +2,7 @@ import { Box, Button, Flex, Progress } from '@chakra-ui/react';
 // import styles from './slider.module.css';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { useBoundingRect } from '../../../../hooks';
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useState, useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../../../../hooks';
 import {
   setSliderWidth,
@@ -24,7 +24,9 @@ export function Slider(props: SliderProps) {
   const { constraint, itemWidth, activeItem } = useAppSelector(
     (state) => state.carousel
   );
+  const { trophies } = useAppSelector((state) => state.landingState);
   const dispatch = useAppDispatch();
+  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout>(null!);
 
   useLayoutEffect(() => {
     dispatch(setSliderWidth(Math.round(width)));
@@ -49,6 +51,18 @@ export function Slider(props: SliderProps) {
       dispatch(increamentActiveItem());
   };
 
+  useEffect(() => {
+    if (timeoutId) clearTimeout(timeoutId);
+    if (activeItem < trophies.length - 1)
+      setTimeoutId(
+        setTimeout(() => {
+          dispatch(setTrackActive());
+          dispatch(increamentActiveItem());
+        }, 6000)
+      );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeItem]);
+
   return (
     <>
       <Box
@@ -58,26 +72,6 @@ export function Slider(props: SliderProps) {
         px={`${gap / 2}px`}
         position="relative"
         overflow="hidden"
-        _before={{
-          bgGradient: 'linear(to-r, base.d400, transparent)',
-          position: 'absolute',
-          w: `${gap / 2}px`,
-          content: "''",
-          zIndex: 1,
-          h: '100%',
-          left: 0,
-          top: 0,
-        }}
-        _after={{
-          bgGradient: 'linear(to-l, base.d400, transparent)',
-          position: 'absolute',
-          w: `${gap / 2}px`,
-          content: "''",
-          zIndex: 1,
-          h: '100%',
-          right: 0,
-          top: 0,
-        }}
       >
         {children}
       </Box>

@@ -1,4 +1,7 @@
 const theme = {
+  fonts:{
+    heading: `'Bebas Neue', sans-serif`,
+  },
   styles: {
     global: {
       "html, body": {
@@ -13,7 +16,7 @@ const theme = {
     xs: "30em",
     sm: "36em",
     md: "46.25em",
-    lg: "62.5em",
+    lg: "60em",
     xl: "78.125em",
     xxl: "95em",
     xxxl: "112.5em",
@@ -40,7 +43,6 @@ const theme = {
   components: {
     Heading: {
       baseStyle: {
-        fontFamily: "inherit",
         fontWeight: "normal",
         color: "inherit"
       }

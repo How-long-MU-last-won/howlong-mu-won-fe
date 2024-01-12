@@ -53,7 +53,6 @@ export function Item(props: ItemProps) {
         mr: `${gap}px`
       }}
       py="4px"
-      h={'50vh'}
     >
       {children}
     </Flex>

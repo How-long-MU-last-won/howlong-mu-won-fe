@@ -8,3 +8,11 @@ export interface DimensionObject {
   right: number,
   bottom: number
 }
+
+export interface TrophyObject {
+  id: number,
+  name: string,
+  lastWonDate: string,
+  numTimesWon: number,
+  lastWonBy: number,
+}

@@ -3,6 +3,7 @@ import navBarMenuDisplayReducer from './slices/navbar/navbar-menu-display.slice'
 import carouselReducer from './slices/landing/carousel.slice';
 import trackReducer from './slices/landing/track.slice';
 import itemReducer from './slices/landing/item.slice';
+import landingReducer from './slices/landing/landing.slice';
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     carousel: carouselReducer,
     track: trackReducer,
     carouselItem: itemReducer,
+    landingState: landingReducer,
   },
 })
 

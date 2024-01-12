@@ -4,10 +4,10 @@ import React, {
   useMemo,
 } from "react";
 
-import {
-  useMediaQuery,
-  useTheme,
-} from "@chakra-ui/react";
+// import {
+//   useMediaQuery,
+//   useTheme,
+// } from "@chakra-ui/react";
 import Slider from '../slider/slider';
 import Item from "../item/item";
 import Track from "../track/track";
@@ -31,35 +31,23 @@ export function Carousel(props: CarouselProps) {
     [children, itemWidth, gap]
   );
 
-  const { breakpoints } = useTheme();
-
-  const [isBetweenBaseAndMd] = useMediaQuery(
-    `(min-width: ${breakpoints.base}) and (max-width: ${breakpoints.md})`
-  );
-
-  const [isBetweenMdAndXl] = useMediaQuery(
-    `(min-width: ${breakpoints.md}) and (max-width: ${breakpoints.xl})`
-  );
-
-  const [isGreaterThanXL] = useMediaQuery(`(min-width: ${breakpoints.xl})`);
-
   useEffect(() => {
-    if (isBetweenBaseAndMd) {
+    // if (isBetweenBaseAndMd) {
       dispatch(setItemWidth(sliderWidth - gap));
       dispatch(setMultiplier(0.65));
       dispatch(setConstraint(1));
-    }
-    if (isBetweenMdAndXl) {
-      dispatch(setItemWidth(sliderWidth / 2 - gap));
-      dispatch(setMultiplier(0.5));
-      dispatch(setConstraint(2));
-    }
-    if (isGreaterThanXL) {
-      dispatch(setItemWidth(sliderWidth / 3 - gap));
-      dispatch(setMultiplier(0.35));
-      dispatch(setConstraint(3));
-    }
-  }, [isBetweenBaseAndMd, isBetweenMdAndXl, isGreaterThanXL, sliderWidth, gap, dispatch]);
+    // }
+    // if (isBetweenMdAndXl) {
+    //   dispatch(setItemWidth(sliderWidth / 2 - gap));
+    //   dispatch(setMultiplier(0.5));
+    //   dispatch(setConstraint(2));
+    // }
+    // if (isGreaterThanXL) {
+    //   dispatch(setItemWidth(sliderWidth / 3 - gap));
+    //   dispatch(setMultiplier(0.35));
+    //   dispatch(setConstraint(3));
+    // }
+  }, [sliderWidth, gap, dispatch]);
 
   const sliderProps = {
     positions,
