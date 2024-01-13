@@ -33,6 +33,15 @@ export function Slider(props: SliderProps) {
     return undefined;
   }, [width, dispatch]);
 
+  // start the rotation first time
+  useEffect(() => {
+    setTimeoutId(
+      setTimeout(() => {
+        dispatch(setTrackActive());
+        dispatch(increamentActiveItem());
+      }, 6000))
+  }, [dispatch]);
+
   const percentage = (x: number, y: number) => {
     return 100 / (y / x);
   };

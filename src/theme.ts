@@ -37,7 +37,12 @@ const theme = {
       d100: "#171F23",
       d200: "#12181B",
       d400: "#0D1214",
-      d700: "#080C0D"
+      d700: "#080C0D",
+      black: "#1a1a1a"
+    },
+    bg: {
+      black: "#231F20",
+      red: "#c70101",
     }
   },
   components: {
@@ -60,7 +65,8 @@ const theme = {
         textTransform: "uppercase",
         letterSpacing: "widest",
         fontWeight: "normal",
-        userSelect: "none"
+        userSelect: "none",
+        color: "base.black"
       }
     }
   }

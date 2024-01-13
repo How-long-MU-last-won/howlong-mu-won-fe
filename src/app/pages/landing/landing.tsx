@@ -18,7 +18,7 @@ export function Landing(props: LandingProps) {
     fetch('http://localhost:8000/trophies/')
       .then((res) => res.json())
       .then((data) => dispatch(setTrophies(data)));
-  });
+  }, [dispatch]);
 
   return (
     <Container
