@@ -4,6 +4,7 @@ import Trophies from './pages/trophies/trophies';
 import Players from './pages/players/players';
 import Managers from './pages/managers/managers';
 import NavBar from './components/nav-bar/nav-bar';
+import Footer from './components/footer/footer';
 
 export function App() {
   return (
@@ -15,6 +16,7 @@ export function App() {
         <Route path="/players" element={<Players />}></Route>
         <Route path="/managers" element={<Managers />}></Route>
       </Routes>
+      <Footer />
     </>
   );
 }

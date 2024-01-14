@@ -38,10 +38,12 @@ const theme = {
       d200: "#12181B",
       d400: "#0D1214",
       d700: "#080C0D",
-      black: "#1a1a1a"
+      black: "#1a1a1a",
+      red: "#f10808",
     },
     bg: {
       black: "#231F20",
+      black200: "#2a2a2a",
       red: "#c70101",
     }
   },

@@ -14,6 +14,14 @@ export function Landing(props: LandingProps) {
   const dispatch = useAppDispatch();
   const { trophies } = useAppSelector((state) => state.landingState);
 
+  // const totalTrophies = useMemo(() => {
+  //   let total = 0;
+  //   for (const trophy of trophies) {
+  //     total += trophy.numTimesWon
+  //   }
+  //   return total;
+  // }, [trophies]);
+
   useEffect(() => {
     fetch('http://localhost:8000/trophies/')
       .then((res) => res.json())

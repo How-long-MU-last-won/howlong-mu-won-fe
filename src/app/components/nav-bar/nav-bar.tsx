@@ -1,5 +1,5 @@
 // import styles from './nav-bar.module.css';
-import { Flex, IconButton } from '@chakra-ui/react';
+import { Flex, IconButton, Container } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import {
   hide,
@@ -36,7 +36,7 @@ export function NavBar(props: NavBarProps) {
   }
 
   return (
-    <Flex bgColor={"bg.red"}>
+    <Container as={'nav'} bgColor={"bg.red"} maxW={'100vw'} display={'flex'}>
       <Flex margin={'auto'}>
         <Flex display={listMenuDisplay}>
           <NavButton to={'/'} label={'Home'} />
@@ -97,7 +97,7 @@ export function NavBar(props: NavBarProps) {
           <NavButton to={'/trophies'} label={'Trophies'} />
         </Flex>
       </Flex>
-    </Flex>
+    </Container>
   );
 }
 
