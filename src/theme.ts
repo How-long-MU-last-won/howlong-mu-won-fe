@@ -45,6 +45,7 @@ const theme = {
       black: "#231F20",
       black200: "#2a2a2a",
       red: "#c70101",
+      red2: "#9f0000"
     }
   },
   components: {
@@ -59,16 +60,15 @@ const theme = {
         fontFamily: "inherit",
         fontWeight: "normal",
         lineHeight: "tall",
-        color: "inherit"
+        color: "inherit",
+        fontSize: "inherit"
       }
     },
     Button: {
       baseStyle: {
         textTransform: "uppercase",
-        letterSpacing: "widest",
+        // letterSpacing: "widest",
         fontWeight: "normal",
-        userSelect: "none",
-        color: "base.black"
       }
     }
   }

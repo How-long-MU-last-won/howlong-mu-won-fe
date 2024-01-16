@@ -16,3 +16,19 @@ export interface TrophyObject {
   numTimesWon: number,
   lastWonBy: number,
 }
+
+export interface ManagerObject {
+  id: number,
+  trophyWon: string[],
+  name: string,
+  DOB: string,
+  numWins: number,
+  numLosses: number,
+  numTies: number,
+  leadFrom: string,
+  leadTo: string,
+  moneySpent: number,
+  statURL: string,
+  shortDesc: string,
+  numPlayersUsed: number,
+}

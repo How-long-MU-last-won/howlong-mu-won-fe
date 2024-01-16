@@ -23,8 +23,8 @@ export function Trophy(props: TrophyProps) {
   const { name, id, lastWonDate } = props;
   const days = countDaysSinceLastWon(lastWonDate);
   const { breakpoints } = useTheme();
-  const largeImg = `./images/cup_${id}.jpg`;
-  const thumbImg = `./images/cup_${id}_thumb.jpg`;
+  const largeImg = `./images/trophies/cup_${id}.jpg`;
+  const thumbImg = `./images/trophies/cup_${id}_thumb.jpg`;
 
   const [isGreaterThanLG] = useMediaQuery(`(min-width: ${breakpoints.lg})`);
   const display = useAppSelector((state) => state.navbarMenuDisplay.value);

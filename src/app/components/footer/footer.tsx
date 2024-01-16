@@ -54,11 +54,25 @@ export function Footer(props: FooterProps) {
         <Text fontSize="lg" color="fg.subtle">
           All images are from the{' '}
           {
-            <Link href="https://www.manutd.com/" isExternal color={'base.red'} fontSize={'lg'}>
+            <Link
+              href="https://www.manutd.com/"
+              isExternal
+              color={'base.red'}
+              fontSize={'lg'}
+            >
               Home Page <ExternalLinkIcon />
             </Link>
           }{' '}
-          of the Manchester United Football Club
+          of the Manchester United Football Club and{' '}
+          <Link
+            href="https://www.goal.com/"
+            isExternal
+            color={'base.red'}
+            fontSize={'lg'}
+          >
+            Goal.com <ExternalLinkIcon />
+          </Link>{' '}
+          website
         </Text>
         <Text fontSize="lg" color="fg.subtle">
           &copy; 2024 Hung Vu. All rights reserved.

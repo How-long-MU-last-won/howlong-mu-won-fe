@@ -4,6 +4,7 @@ import carouselReducer from './slices/landing/carousel.slice';
 import trackReducer from './slices/landing/track.slice';
 import itemReducer from './slices/landing/item.slice';
 import landingReducer from './slices/landing/landing.slice';
+import managersReducer from './slices/managers/managers.slice';
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     track: trackReducer,
     carouselItem: itemReducer,
     landingState: landingReducer,
+    managersState: managersReducer,
   },
 })
 
