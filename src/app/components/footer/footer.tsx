@@ -63,7 +63,7 @@ export function Footer(props: FooterProps) {
               Home Page <ExternalLinkIcon />
             </Link>
           }{' '}
-          of the Manchester United Football Club and{' '}
+          of the Manchester United Football Club, {' '}
           <Link
             href="https://www.goal.com/"
             isExternal
@@ -72,7 +72,7 @@ export function Footer(props: FooterProps) {
           >
             Goal.com <ExternalLinkIcon />
           </Link>{' '}
-          website
+          website, The Mirror, Sky Sports
         </Text>
         <Text fontSize="lg" color="fg.subtle">
           &copy; 2024 Hung Vu. All rights reserved.
