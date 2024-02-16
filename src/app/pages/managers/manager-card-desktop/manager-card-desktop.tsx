@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { useMemo } from 'react';
 import { ManagerObject } from 'src/types';
+import Bold from '../../../components/bold/bold';
 // import styles from './manager-card-desktop.module.css';
 
 /* eslint-disable-next-line */
@@ -52,13 +53,15 @@ export function ManagerCardDesktop({ manager }: ManagerCardDesktopProps) {
       alignItems={'center'}
       maxW={{ lg: '90vw', xl: '85vw', xxl: '80vw' }}
     >
-      <HStack
-        spacing={5}
-        color={'base.black'}
-        align={'flex-start'}
-      >
+      <HStack spacing={5} color={'base.black'} align={'flex-start'}>
         <Flex w={{ lg: '43vw', xl: '41.5vw', xxl: '39vw' }}>
-          <Image src={imgURL} rounded={12} boxSize={'full'} objectFit={'cover'} alt={name} />
+          <Image
+            src={imgURL}
+            rounded={12}
+            boxSize={'full'}
+            objectFit={'cover'}
+            alt={name}
+          />
         </Flex>
         <VStack
           alignItems={'flex-start'}
@@ -69,9 +72,11 @@ export function ManagerCardDesktop({ manager }: ManagerCardDesktopProps) {
         >
           <Heading as={'h1'}>{name}</Heading>
           <VStack alignItems={'flex-start'} spacing={0}>
-            <Text>Born: {DOB}</Text>
             <Text>
-              In charge: {leadFrom} - {leadTo}
+              <Bold>Born:</Bold> {DOB}
+            </Text>
+            <Text>
+              <Bold>In charge:</Bold> {leadFrom} - {leadTo}
             </Text>
             <Text>{trophyString}</Text>
             <Text>
@@ -80,8 +85,8 @@ export function ManagerCardDesktop({ manager }: ManagerCardDesktopProps) {
               {numTies} draws.
             </Text>
             <Text>
-              Spent €{moneySpent} on transfers and used {numPlayersUsed}{' '}
-              players during his tenure.
+              Spent €{moneySpent} on transfers and used {numPlayersUsed} players
+              during his tenure.
             </Text>
           </VStack>
 

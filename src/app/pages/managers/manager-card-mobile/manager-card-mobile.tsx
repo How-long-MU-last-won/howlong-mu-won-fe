@@ -10,6 +10,7 @@ import {
   Link,
   Button,
 } from '@chakra-ui/react';
+import { Bold } from '../../../components/bold/bold';
 
 /* eslint-disable-next-line */
 export interface ManagerCardMobileProps {
@@ -59,9 +60,9 @@ export function ManagerCardMobile({ manager }: ManagerCardMobileProps) {
         >
           <Heading as={'h1'}>{name}</Heading>
           <VStack alignItems={'flex-start'} spacing={0}>
-            <Text>Born: {DOB}</Text>
+            <Text><Bold>Born:</Bold> {DOB}</Text>
             <Text>
-              In charge: {leadFrom} - {leadTo}
+              <Bold>In charge:</Bold> {leadFrom} - {leadTo}
             </Text>
             <Text>{trophyString}</Text>
             <Text>

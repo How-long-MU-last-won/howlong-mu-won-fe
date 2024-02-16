@@ -1,5 +1,6 @@
 import '@fontsource/bebas-neue';
 import '@fontsource/source-sans-pro';
+import '@fontsource/montserrat/600.css';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';

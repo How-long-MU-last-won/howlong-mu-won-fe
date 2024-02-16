@@ -5,9 +5,9 @@ const theme = {
   styles: {
     global: {
       "html, body": {
-        fontFamily: "Inter, sans-serif",
+        fontFamily: `'Source Sans Pro', sans-serif;`,
         // bg: "base.d400",
-        color: "gray.200",
+        // color: "gray.200",
         h: "full"
       }
     }
@@ -59,7 +59,7 @@ const theme = {
       baseStyle: {
         fontFamily: "inherit",
         fontWeight: "normal",
-        lineHeight: "tall",
+        lineHeight: {"base": "short", "lg": "base", "xl": "tall"},
         color: "inherit",
         fontSize: "inherit"
       }

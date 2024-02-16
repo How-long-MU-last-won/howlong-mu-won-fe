@@ -71,8 +71,23 @@ export function Footer(props: FooterProps) {
             fontSize={'lg'}
           >
             Goal.com <ExternalLinkIcon />
-          </Link>{' '}
-          website, The Mirror, Sky Sports
+          </Link>, {' '}
+          <Link
+            href="https://www.mirror.co.uk/"
+            isExternal
+            color={'base.red'}
+            fontSize={'lg'}
+          >
+            The Mirror <ExternalLinkIcon />
+          </Link>, and{' '}
+          <Link
+            href="https://www.skysports.com/"
+            isExternal
+            color={'base.red'}
+            fontSize={'lg'}
+          >
+            Sky Sports <ExternalLinkIcon />
+          </Link>{' '}.
         </Text>
         <Text fontSize="lg" color="fg.subtle">
           &copy; 2024 Hung Vu. All rights reserved.
