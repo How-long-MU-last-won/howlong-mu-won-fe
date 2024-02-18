@@ -20,6 +20,10 @@
         }
       }
     },
+    "deploy": {
+      "dependsOn": ["build"],
+      "command": "netlify deploy --dir=dist/howlong-mu-won-fe"
+    },
     "serve": {
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
