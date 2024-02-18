@@ -42,7 +42,7 @@ export function NavBar(props: NavBarProps) {
           <NavButton to={'/'} label={'Home'} />
           <NavButton to={'/managers'} label={'Managers'} />
           <NavButton to={'/players'} label={'Players'} />
-          <NavButton to={'/trophies'} label={'Trophies'} />
+          {/* <NavButton to={'/test'} label={'Trophies'} /> */}
         </Flex>
         <Flex
           w="100vw"
@@ -94,7 +94,7 @@ export function NavBar(props: NavBarProps) {
           <NavButton to={'/'} label={'Home'} />
           <NavButton to={'/managers'} label={'Managers'} />
           <NavButton to={'/players'} label={'Players'} />
-          <NavButton to={'/trophies'} label={'Trophies'} />
+          {/* <NavButton to={'/test'} label={'Trophies'} /> */}
         </Flex>
       </Flex>
     </Container>

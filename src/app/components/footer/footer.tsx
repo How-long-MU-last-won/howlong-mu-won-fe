@@ -90,6 +90,9 @@ export function Footer(props: FooterProps) {
           </Link>{' '}.
         </Text>
         <Text fontSize="lg" color="fg.subtle">
+          Players and managers' data is collected as of Jan 14 2024.
+        </Text>
+        <Text fontSize="lg" color="fg.subtle">
           &copy; 2024 Hung Vu. All rights reserved.
         </Text>
       </Stack>

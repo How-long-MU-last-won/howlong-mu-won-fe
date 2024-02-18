@@ -3,30 +3,13 @@
 /* eslint-disable-next-line */
 import { Container, Flex } from '@chakra-ui/react';
 import Carousel from './carousel/carousel';
-import { useEffect } from 'react';
 import Trophy from './trophy/trophy';
-import { useAppSelector, useAppDispatch } from '../../../hooks';
-import { setTrophies } from '../../../redux/slices/landing/landing.slice';
+import { useAppSelector } from '../../../hooks';
 
 export interface LandingProps {}
 
 export function Landing(props: LandingProps) {
-  const dispatch = useAppDispatch();
   const { trophies } = useAppSelector((state) => state.landingState);
-
-  // const totalTrophies = useMemo(() => {
-  //   let total = 0;
-  //   for (const trophy of trophies) {
-  //     total += trophy.numTimesWon
-  //   }
-  //   return total;
-  // }, [trophies]);
-
-  useEffect(() => {
-    fetch('http://localhost:8000/trophies/')
-      .then((res) => res.json())
-      .then((data) => dispatch(setTrophies(data)));
-  }, [dispatch]);
 
   return (
     <Container

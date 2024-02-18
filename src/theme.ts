@@ -6,8 +6,7 @@ const theme = {
     global: {
       "html, body": {
         fontFamily: `'Source Sans Pro', sans-serif;`,
-        // bg: "base.d400",
-        // color: "gray.200",
+        background: "bg.grey",
         h: "full"
       }
     }
@@ -45,7 +44,8 @@ const theme = {
       black: "#231F20",
       black200: "#2a2a2a",
       red: "#c70101",
-      red2: "#9f0000"
+      red2: "#9f0000",
+      grey: "#f8f8f8",
     }
   },
   components: {
