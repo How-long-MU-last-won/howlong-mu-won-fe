@@ -3,10 +3,12 @@ import { TrophyObject } from '../../../types/index';
 
 export interface LandingState {
   trophies: TrophyObject[];
+  isTrophiesLoading: boolean;
 }
 
 const initialState: LandingState = {
   trophies: [],
+  isTrophiesLoading: true,
 }
 
 export const landingSlice = createSlice({
@@ -16,9 +18,12 @@ export const landingSlice = createSlice({
     setTrophies: (state, action: PayloadAction<TrophyObject[]>) => {
       state.trophies = action.payload;
     },
+    finishTrophiesLoading: (state) => {
+      state.isTrophiesLoading = false;
+    }
   },
 });
 
-export const { setTrophies } = landingSlice.actions;
+export const { setTrophies, finishTrophiesLoading } = landingSlice.actions;
 
 export default landingSlice.reducer;

@@ -4,11 +4,13 @@ import { PlayerObject } from '../../../types/index';
 export interface PlayersState {
   players: PlayerObject[];
   hightlightedPlayer: PlayerObject | null;
+  isPlayersLoading: boolean;
 }
 
 const initialState: PlayersState = {
   players: [],
   hightlightedPlayer: null,
+  isPlayersLoading: true,
 }
 
 export const playersSlice = createSlice({
@@ -20,10 +22,13 @@ export const playersSlice = createSlice({
     },
     setHighlightedPlayer: (state, action: PayloadAction<PlayerObject>) => {
       state.hightlightedPlayer = action.payload;
+    },
+    finishPlayersLoading: (state) => {
+      state.isPlayersLoading = false;
     }
   },
 });
 
-export const { setPlayers, setHighlightedPlayer } = playersSlice.actions;
+export const { setPlayers, setHighlightedPlayer, finishPlayersLoading } = playersSlice.actions;
 
 export default playersSlice.reducer;
