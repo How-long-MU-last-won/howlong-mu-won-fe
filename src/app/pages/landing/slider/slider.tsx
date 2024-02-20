@@ -81,6 +81,7 @@ export function Slider(props: SliderProps) {
         px={`${gap / 2}px`}
         position="relative"
         overflow="hidden"
+        rounded={20}
       >
         {children}
       </Box>

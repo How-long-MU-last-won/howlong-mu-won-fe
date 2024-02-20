@@ -1,18 +1,19 @@
 // import styles from './carousel.module.css';
-import React, {
-  useEffect,
-  useMemo,
-} from "react";
+import React, { useEffect, useMemo } from 'react';
 
 // import {
 //   useMediaQuery,
 //   useTheme,
 // } from "@chakra-ui/react";
 import Slider from '../slider/slider';
-import Item from "../item/item";
-import Track from "../track/track";
+import Item from '../item/item';
+import Track from '../track/track';
 import { useAppSelector, useAppDispatch } from '../../../../hooks';
-import { setMultiplier, setConstraint, setItemWidth } from '../../../../redux/slices/landing/carousel.slice';
+import {
+  setMultiplier,
+  setConstraint,
+  setItemWidth,
+} from '../../../../redux/slices/landing/carousel.slice';
 
 /* eslint-disable-next-line */
 export interface CarouselProps {
@@ -21,7 +22,7 @@ export interface CarouselProps {
 }
 
 export function Carousel(props: CarouselProps) {
-  const {children, gap} = props;
+  const { children, gap } = props;
   const { itemWidth, sliderWidth } = useAppSelector((state) => state.carousel);
 
   const dispatch = useAppDispatch();
@@ -32,37 +33,25 @@ export function Carousel(props: CarouselProps) {
   );
 
   useEffect(() => {
-    // if (isBetweenBaseAndMd) {
-      dispatch(setItemWidth(sliderWidth - gap));
-      dispatch(setMultiplier(0.65));
-      dispatch(setConstraint(1));
-    // }
-    // if (isBetweenMdAndXl) {
-    //   dispatch(setItemWidth(sliderWidth / 2 - gap));
-    //   dispatch(setMultiplier(0.5));
-    //   dispatch(setConstraint(2));
-    // }
-    // if (isGreaterThanXL) {
-    //   dispatch(setItemWidth(sliderWidth / 3 - gap));
-    //   dispatch(setMultiplier(0.35));
-    //   dispatch(setConstraint(3));
-    // }
+    dispatch(setItemWidth(sliderWidth - gap));
+    dispatch(setMultiplier(0.65));
+    dispatch(setConstraint(1));
   }, [sliderWidth, gap, dispatch]);
 
   const sliderProps = {
     positions,
-    gap
+    gap,
   };
 
   const trackProps = {
     sliderWidth,
     positions,
-    gap
+    gap,
   };
 
   const itemProps = {
     positions,
-    gap
+    gap,
   };
 
   return (

@@ -15,7 +15,7 @@ export function PlayerContainerByPosition(
   const { positionName, position, onOpen } = props;
   const { players } = useAppSelector((state) => state.playersState);
   return (
-    <Box mx={{ base: '10vw', md: '6vw', xxl: '8vw' }}>
+    <Box>
       <Heading
         my={12}
         as={'h3'}

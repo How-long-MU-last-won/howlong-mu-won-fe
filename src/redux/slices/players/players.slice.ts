@@ -5,12 +5,14 @@ export interface PlayersState {
   players: PlayerObject[];
   hightlightedPlayer: PlayerObject | null;
   isPlayersLoading: boolean;
+  seachString: string;
 }
 
 const initialState: PlayersState = {
   players: [],
   hightlightedPlayer: null,
   isPlayersLoading: true,
+  seachString: '',
 }
 
 export const playersSlice = createSlice({
@@ -25,10 +27,13 @@ export const playersSlice = createSlice({
     },
     finishPlayersLoading: (state) => {
       state.isPlayersLoading = false;
-    }
+    },
+    setSearchString: (state, action: PayloadAction<string>) => {
+      state.seachString = action.payload;
+    },
   },
 });
 
-export const { setPlayers, setHighlightedPlayer, finishPlayersLoading } = playersSlice.actions;
+export const { setPlayers, setHighlightedPlayer, finishPlayersLoading, setSearchString } = playersSlice.actions;
 
 export default playersSlice.reducer;

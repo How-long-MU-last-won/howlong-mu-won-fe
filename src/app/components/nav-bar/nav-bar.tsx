@@ -36,7 +36,7 @@ export function NavBar(props: NavBarProps) {
   }
 
   return (
-    <Container as={'nav'} bgColor={"bg.red"} maxW={'100vw'} display={'flex'}>
+    <Container as={'nav'} bgColor={"bg.red"} maxW={'100vw'} display={'flex'} pos={'fixed'} top={0} zIndex={9999}>
       <Flex margin={'auto'}>
         <Flex display={listMenuDisplay}>
           <NavButton to={'/'} label={'Home'} />
@@ -57,7 +57,7 @@ export function NavBar(props: NavBarProps) {
             aria-label="Open Menu"
             size="lg"
             fontSize={'2.5rem'}
-            mr={2}
+            mr={8}
             icon={<HamburgerIcon />}
             onClick={() => dispatch(show())}
           />
@@ -79,7 +79,7 @@ export function NavBar(props: NavBarProps) {
         <Flex justify="flex-end" mt={2} mb={2} className='btn-wrapper'>
           <IconButton
             mt={2}
-            mr={2}
+            mr={8}
             variant='outline'
             colorScheme='white'
             aria-label="Open Menu"

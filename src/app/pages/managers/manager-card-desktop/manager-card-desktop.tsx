@@ -48,12 +48,11 @@ export function ManagerCardDesktop({ manager }: ManagerCardDesktopProps) {
 
   return (
     <Flex
-      m={'auto'}
+      mx={'auto'}
       my={{ lg: 12, xxl: 16 }}
       alignItems={'center'}
-      maxW={{ lg: '90vw', xl: '85vw', xxl: '80vw' }}
     >
-      <HStack spacing={5} color={'base.black'} align={'flex-start'}>
+      <HStack spacing={6} color={'base.black'} align={'flex-start'}>
         <Flex w={{ lg: '43vw', xl: '41.5vw', xxl: '39vw' }}>
           <Image
             src={imgURL}

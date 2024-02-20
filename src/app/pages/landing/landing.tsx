@@ -1,7 +1,7 @@
 // import styles from './landing.module.css';
 
 /* eslint-disable-next-line */
-import { Container, Flex } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading } from '@chakra-ui/react';
 import Carousel from './carousel/carousel';
 import Trophy from './trophy/trophy';
 import { useAppSelector } from '../../../hooks';
@@ -16,35 +16,45 @@ export function Landing(props: LandingProps) {
 
   return (
     <Container
-      py={8}
       px={0}
       maxW={{
         base: '100%',
-        sm: '98vw',
-        lg: '95vw',
-        xxl: '92vw',
+        md: '96vw',
+        xxl: '80vw',
       }}
-      my={20}
+      rounded={16}
+      my={12}
     >
+      <Box mt={36}>
+        <Heading>
+          We are Manchester United fan, of course we count our trophies
+        </Heading>
+        <Heading as="h2" size="md" my={4}>
+          But when was the last time we actually won one ...
+        </Heading>
+      </Box>
       {isTrophiesLoading ? (
-        <Spinner borderWidth={6} speed='0.8s' display={'block'} className='spinner' mx={'auto'} color='bg.red' size={'xl'} />
+        <Spinner
+          borderWidth={6}
+          speed="0.8s"
+          display={'block'}
+          className="spinner"
+          mx={'auto'}
+          color="bg.red"
+          size={'xl'}
+        />
       ) : (
         <Carousel gap={30}>
           {trophies.map((trophy) => (
             <Flex
+              className="shadow"
               key={trophy.id}
-              boxShadow={{
-                base: 'rgba(0, 0, 0, 0.16) 0px 1px 2px, rgba(0, 0, 0, 0.23) 0px 1px 2px',
-                lg: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px',
-              }}
               justifyContent="space-between"
               flexDirection="column"
               overflow="hidden"
               color="gray.300"
-              bg="base.d100"
-              rounded={8}
+              rounded={16}
               flex={1}
-              p={{ base: 2, sm: 2, md: 3, lg: 4, xxl: 5 }}
             >
               <Trophy {...trophy} />
             </Flex>
