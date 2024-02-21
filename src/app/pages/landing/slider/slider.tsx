@@ -91,9 +91,10 @@ export function Slider(props: SliderProps) {
           onClick={handleDecrementClick}
           onFocus={handleFocus}
           mr={`${gap / 3}px`}
-          color="gray.200"
+          color="base.grey"
           variant="link"
           minW={0}
+          _hover={{ color: 'black' }}
         >
           <ChevronLeftIcon boxSize={9} />
         </Button>
@@ -102,12 +103,12 @@ export function Slider(props: SliderProps) {
           value={percentage(activeItem, positions.length - constraint)}
           alignSelf="center"
           borderRadius="2px"
-          bg="base.d100"
+          bg="bg.red"
           flex={1}
           h="3px"
           sx={{
             '> div': {
-              backgroundColor: 'gray.400',
+              backgroundColor: 'base.grey',
             },
           }}
         />
@@ -116,10 +117,11 @@ export function Slider(props: SliderProps) {
           onClick={handleIncrementClick}
           onFocus={handleFocus}
           ml={`${gap / 3}px`}
-          color="gray.200"
+          color="base.grey"
           variant="link"
           zIndex={2}
           minW={0}
+          _hover={{ color: 'black' }}
         >
           <ChevronRightIcon boxSize={9} />
         </Button>

@@ -30,6 +30,7 @@ export function PlayerCard(props: PlayerCardProps) {
     <Box
       key={id}
       position={'relative'}
+      maxW={{ md: '100%', lg: '42vw', xl: '30vw', xxl: '20vw' }}
       aspectRatio={1 / 1}
       rounded={{ base: 22, md: 20, lg: 16, xl: 12 }}
       overflow={'hidden'}

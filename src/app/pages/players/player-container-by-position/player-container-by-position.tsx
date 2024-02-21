@@ -1,19 +1,19 @@
 import { Box, Heading, SimpleGrid } from '@chakra-ui/react';
 import PlayerCard from '../player-card/player-card';
-import { useAppSelector } from '../../../../hooks';
+import { PlayerObject } from 'src/types';
 
 /* eslint-disable-next-line */
 export interface PlayerContainerByPositionProps {
   positionName: string;
   position: string;
   onOpen: () => void;
+  players: PlayerObject[];
 }
 
 export function PlayerContainerByPosition(
   props: PlayerContainerByPositionProps
 ) {
-  const { positionName, position, onOpen } = props;
-  const { players } = useAppSelector((state) => state.playersState);
+  const { positionName, position, onOpen, players } = props;
   return (
     <Box>
       <Heading

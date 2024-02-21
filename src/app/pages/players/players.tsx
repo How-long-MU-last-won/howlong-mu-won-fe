@@ -1,11 +1,7 @@
 import {
   Box,
   Container,
-  FormControl,
   Heading,
-  Input,
-  InputGroup,
-  InputLeftElement,
   Spinner,
   useDisclosure,
 } from '@chakra-ui/react';
@@ -13,7 +9,8 @@ import PlayerModal from './player-modal/player-modal';
 
 import PlayerContainerByPosition from './player-container-by-position/player-container-by-position';
 import { useAppSelector } from '../../../hooks';
-import { Search2Icon } from '@chakra-ui/icons';
+import { PlayerObject } from 'src/types';
+import PlayerSeach from './player-seach/player-seach';
 
 /* eslint-disable-next-line */
 export interface PlayersProps {}
@@ -24,9 +21,23 @@ const POSITIONS = [
   { positionName: 'FORWARDS', position: 'FW' },
 ];
 
+const filterPlayersByName = (players: PlayerObject[], searchString: string) => {
+  return players.filter((player) =>
+    player.name.toLowerCase().includes(searchString.toLowerCase())
+  );
+};
+
 export function Players(props: PlayersProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isPlayersLoading } = useAppSelector((state) => state.playersState);
+  const { isPlayersLoading, players, seachString } = useAppSelector(
+    (state) => state.playersState
+  );
+  let filteredPlayers;
+  if (seachString) {
+    filteredPlayers = filterPlayersByName(players, seachString);
+  } else {
+    filteredPlayers = [...players];
+  }
 
   return (
     <Container
@@ -45,45 +56,7 @@ export function Players(props: PlayersProps) {
           But what did we get ...
         </Heading>
       </Box>
-      <Box
-        pos={'fixed'}
-        zIndex={5000}
-        top={'3.75rem'}
-        w={'100vw'}
-        right={0}
-        h={'3.75rem'}
-        background={'white'}
-      >
-        <FormControl
-          pos={'fixed'}
-          left={'50%'}
-          transform={'translateX(-50%)'}
-          w={'80vw'}
-          h={'3.75rem'}
-        >
-          <InputGroup
-            maxW={{
-              base: '60vw',
-              lg: '40vw',
-              xl: '20vw',
-            }}
-            pos={'fixed'}
-            zIndex={9999}
-            top={'0.85rem'}
-          >
-            <InputLeftElement>
-              <Search2Icon />
-            </InputLeftElement>
-            <Input
-              type="string"
-              variant="flushed"
-              placeholder="Search"
-              focusBorderColor={'bg.red'}
-              disabled={isPlayersLoading}
-            />
-          </InputGroup>
-        </FormControl>
-      </Box>
+      <PlayerSeach />
       {isPlayersLoading ? (
         <Spinner
           borderWidth={6}
@@ -97,6 +70,7 @@ export function Players(props: PlayersProps) {
       ) : (
         POSITIONS.map((position) => (
           <PlayerContainerByPosition
+            players={filteredPlayers}
             key={position.position}
             positionName={position.positionName}
             position={position.position}

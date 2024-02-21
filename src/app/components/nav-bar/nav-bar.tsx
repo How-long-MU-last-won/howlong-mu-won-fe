@@ -36,7 +36,7 @@ export function NavBar(props: NavBarProps) {
   }
 
   return (
-    <Container as={'nav'} bgColor={"bg.red"} maxW={'100vw'} display={'flex'} pos={'fixed'} top={0} zIndex={9999}>
+    <Container as={'nav'} bgColor={"bg.red"} maxW={'100vw'} display={'flex'} pos={'fixed'} top={0} zIndex={999}>
       <Flex margin={'auto'}>
         <Flex display={listMenuDisplay}>
           <NavButton to={'/'} label={'Home'} />

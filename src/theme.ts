@@ -39,6 +39,7 @@ const theme = {
       d700: "#080C0D",
       black: "#1a1a1a",
       red: "#f10808",
+      grey: "#6e6e6e"
     },
     bg: {
       black: "#231F20",
