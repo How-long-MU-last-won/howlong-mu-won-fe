@@ -32,7 +32,7 @@ export function Players(props: PlayersProps) {
   const { isPlayersLoading, players, seachString } = useAppSelector(
     (state) => state.playersState
   );
-  let filteredPlayers;
+  let filteredPlayers : PlayerObject[];
   if (seachString) {
     filteredPlayers = filterPlayersByName(players, seachString);
   } else {

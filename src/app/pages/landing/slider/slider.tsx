@@ -2,7 +2,7 @@ import { Box, Button, Flex, Progress } from '@chakra-ui/react';
 // import styles from './slider.module.css';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { useBoundingRect } from '../../../../hooks';
-import { useLayoutEffect, useState, useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../../../../hooks';
 import {
   setSliderWidth,
@@ -24,23 +24,12 @@ export function Slider(props: SliderProps) {
   const { constraint, itemWidth, activeItem } = useAppSelector(
     (state) => state.carousel
   );
-  const { trophies } = useAppSelector((state) => state.landingState);
   const dispatch = useAppDispatch();
-  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout>(null!);
 
   useLayoutEffect(() => {
     dispatch(setSliderWidth(Math.round(width)));
     return undefined;
   }, [width, dispatch]);
-
-  // start the rotation first time
-  useEffect(() => {
-    setTimeoutId(
-      setTimeout(() => {
-        dispatch(setTrackActive());
-        dispatch(increamentActiveItem());
-      }, 6000))
-  }, [dispatch]);
 
   const percentage = (x: number, y: number) => {
     return 100 / (y / x);
@@ -59,18 +48,6 @@ export function Slider(props: SliderProps) {
     !(activeItem === positions.length - constraint) &&
       dispatch(increamentActiveItem());
   };
-
-  useEffect(() => {
-    if (timeoutId) clearTimeout(timeoutId);
-    if (activeItem < trophies.length - 1)
-      setTimeoutId(
-        setTimeout(() => {
-          dispatch(setTrackActive());
-          dispatch(increamentActiveItem());
-        }, 6000)
-      );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeItem]);
 
   return (
     <>
