@@ -71,7 +71,7 @@ export function ManagerCardMobile({ manager }: ManagerCardMobileProps) {
               {numTies} draws.
             </Text>
             <Text>
-              He spent €{moneySpent} on transfers and used {numPlayersUsed}{' '}
+              He spent {moneySpent} on transfers and used {numPlayersUsed}{' '}
               players during his tenure.
             </Text>
           </VStack>

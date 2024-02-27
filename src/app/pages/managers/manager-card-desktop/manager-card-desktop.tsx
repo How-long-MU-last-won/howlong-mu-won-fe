@@ -84,7 +84,7 @@ export function ManagerCardDesktop({ manager }: ManagerCardDesktopProps) {
               {numTies} draws.
             </Text>
             <Text>
-              Spent €{moneySpent} on transfers and used {numPlayersUsed} players
+              Spent {moneySpent} on transfers and used {numPlayersUsed} players
               during his tenure.
             </Text>
           </VStack>

@@ -27,7 +27,7 @@ export interface ManagerObject {
   numTies: number;
   leadFrom: string;
   leadTo: string;
-  moneySpent: number;
+  moneySpent: string;
   statURL: string;
   shortDesc: string;
   numPlayersUsed: number;
