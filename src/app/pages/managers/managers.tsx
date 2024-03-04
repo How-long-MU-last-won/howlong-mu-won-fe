@@ -5,6 +5,7 @@ import { useAppSelector } from '../../../hooks';
 
 import { useMediaQuery, useTheme } from '@chakra-ui/react';
 import ManagerCardMobile from './manager-card-mobile/manager-card-mobile';
+import { useEffect } from 'react';
 
 /* eslint-disable-next-line */
 export interface ManagersProps {}
@@ -14,6 +15,9 @@ export function Managers(props: ManagersProps) {
   const { managers, isManagersLoading } = useAppSelector(
     (state) => state.managersState
   );
+  useEffect(() => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, []);
 
   const [isLargerThanLg] = useMediaQuery(`(min-width: ${breakpoints.lg})`);
 

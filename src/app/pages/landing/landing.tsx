@@ -6,6 +6,7 @@ import Carousel from './carousel/carousel';
 import Trophy from './trophy/trophy';
 import { useAppSelector } from '../../../hooks';
 import { Spinner } from '@chakra-ui/react';
+import { useEffect } from 'react';
 
 export interface LandingProps {}
 
@@ -13,6 +14,9 @@ export function Landing(props: LandingProps) {
   const { trophies, isTrophiesLoading } = useAppSelector(
     (state) => state.landingState
   );
+  useEffect(() => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, []);
 
   return (
     <Container

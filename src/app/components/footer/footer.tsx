@@ -35,7 +35,7 @@ export function Footer(props: FooterProps) {
               colorScheme="whiteAlpha"
               size={'lg'}
               as="a"
-              href="#"
+              href="https://www.linkedin.com/in/hung-d-vu/"
               aria-label="LinkedIn"
               icon={<FaLinkedin />}
             />
@@ -45,7 +45,7 @@ export function Footer(props: FooterProps) {
               colorScheme="whiteAlpha"
               size={'lg'}
               as="a"
-              href="#"
+              href="https://github.com/hungdvu1710"
               aria-label="GitHub"
               icon={<FaGithub />}
             />

@@ -11,6 +11,7 @@ import PlayerContainerByPosition from './player-container-by-position/player-con
 import { useAppSelector } from '../../../hooks';
 import { PlayerObject } from 'src/types';
 import PlayerSeach from './player-seach/player-seach';
+import { useEffect } from 'react';
 
 /* eslint-disable-next-line */
 export interface PlayersProps {}
@@ -28,6 +29,9 @@ const filterPlayersByName = (players: PlayerObject[], searchString: string) => {
 };
 
 export function Players(props: PlayersProps) {
+  useEffect(() => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, []);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isPlayersLoading, players, seachString } = useAppSelector(
     (state) => state.playersState
