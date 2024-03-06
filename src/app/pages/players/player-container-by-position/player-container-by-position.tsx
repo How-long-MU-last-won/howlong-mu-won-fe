@@ -2,7 +2,8 @@ import { Box, Button, Collapse, SimpleGrid } from '@chakra-ui/react';
 import PlayerCard from '../player-card/player-card';
 import { PlayerObject } from '@/types';
 import { ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { useState } from 'react';
+import { useAppSelector, useAppDispatch } from '@hooks';
+import { setDisplayPlayerSection } from '@/redux/slices/players/players.slice';
 
 /* eslint-disable-next-line */
 export interface PlayerContainerByPositionProps {
@@ -15,8 +16,19 @@ export interface PlayerContainerByPositionProps {
 export function PlayerContainerByPosition(
   props: PlayerContainerByPositionProps
 ) {
+  const dispatch = useAppDispatch();
+  const { displayPlayerSection } = useAppSelector((state) => state.playersState);
   const { positionName, position, onOpen, players } = props;
-  const [isShowPlayer, setIsShowPlayer] = useState(true);
+
+  const handleClick = () => {
+    dispatch(
+      setDisplayPlayerSection({
+        ...displayPlayerSection,
+        [position]: !displayPlayerSection[position],
+      })
+    );
+  };
+
   return (
     <Box>
       <Button
@@ -28,20 +40,20 @@ export function PlayerContainerByPosition(
         justifyContent={'flex-start'}
         w={'100%'}
         borderBottom={'1px solid #d9d9d9'}
-        onClick={() => setIsShowPlayer(!isShowPlayer)}
+        onClick={handleClick}
         _hover={{
           background: 'transparent',
           color: 'bg.red',
         }}
       >
-        {isShowPlayer ? (
+        {displayPlayerSection[position] ? (
           <ChevronDownIcon boxSize={'2.5rem'} />
         ) : (
           <ChevronRightIcon boxSize={'2.5rem'} />
         )}
         {positionName}
       </Button>
-      <Collapse in={isShowPlayer} animateOpacity>
+      <Collapse in={displayPlayerSection[position]} animateOpacity>
         <SimpleGrid
           minChildWidth={{ md: '30vw', lg: '24vw', xl: '20vw', xxl: '18vw' }}
           spacing={{ base: '4vw', md: '2vw', lg: '1.5vw' }}

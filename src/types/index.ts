@@ -45,3 +45,11 @@ export interface PlayerObject {
   statURL: string;
   price: string;
 }
+
+export interface DisplayPlayerSectionObject {
+  'GK': boolean;
+  'DF': boolean;
+  'MF': boolean;
+  'FW': boolean;
+  [key: string]: boolean;
+}

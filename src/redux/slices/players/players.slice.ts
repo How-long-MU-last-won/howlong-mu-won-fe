@@ -1,14 +1,21 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { PlayerObject } from '../../../types/index';
+import { DisplayPlayerSectionObject, PlayerObject } from '@/types/index';
 
 export interface PlayersState {
   hightlightedPlayer: PlayerObject | null;
   seachString: string;
+  displayPlayerSection: DisplayPlayerSectionObject;
 }
 
 const initialState: PlayersState = {
   hightlightedPlayer: null,
   seachString: '',
+  displayPlayerSection: {
+    'GK': true,
+    'DF': true,
+    'MF': true,
+    'FW': true,
+  },
 };
 
 export const playersSlice = createSlice({
@@ -21,9 +28,15 @@ export const playersSlice = createSlice({
     setSearchString: (state, action: PayloadAction<string>) => {
       state.seachString = action.payload;
     },
+    setDisplayPlayerSection: (
+      state,
+      action: PayloadAction<DisplayPlayerSectionObject>
+    ) => {
+      state.displayPlayerSection = action.payload;
+    },
   },
 });
 
-export const { setHighlightedPlayer, setSearchString } = playersSlice.actions;
+export const { setHighlightedPlayer, setSearchString, setDisplayPlayerSection } = playersSlice.actions;
 
 export default playersSlice.reducer;

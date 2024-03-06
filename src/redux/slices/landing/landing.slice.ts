@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { TrophyObject } from '../../../types/index';
+import { TrophyObject } from '@/types/index';
 
 export interface LandingState {
   trophies: TrophyObject[];

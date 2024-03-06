@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react';
 import { Field, Form, Formik, FieldProps } from 'formik';
 import { Search2Icon } from '@chakra-ui/icons';
-import { setSearchString } from '@/redux/slices/players/players.slice';
+import { setSearchString, setDisplayPlayerSection } from '@/redux/slices/players/players.slice';
 
 import { useAppDispatch } from '@hooks';
 import { useGetPlayersQuery } from '@/redux/slices/api/api.slice';
@@ -29,8 +29,14 @@ export function PlayerSeach(props: PlayerSeachProps) {
     >
       <Formik
         initialValues={{ name: '' }}
-        onSubmit={(values, actions) => {
+        onSubmit={(values) => {
           dispatch(setSearchString(values.name));
+          dispatch(setDisplayPlayerSection({
+            'GK': true,
+            'DF': true,
+            'MF': true,
+            'FW': true,
+          }))
         }}
       >
         {(props) => (

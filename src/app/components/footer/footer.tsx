@@ -38,6 +38,7 @@ export function Footer(props: FooterProps) {
               href="https://www.linkedin.com/in/hung-d-vu/"
               aria-label="LinkedIn"
               icon={<FaLinkedin />}
+              target='_blank'
             />
             <IconButton
               variant={'solid'}
@@ -48,6 +49,7 @@ export function Footer(props: FooterProps) {
               href="https://github.com/hungdvu1710"
               aria-label="GitHub"
               icon={<FaGithub />}
+              target='_blank'
             />
           </ButtonGroup>
         </Stack>
