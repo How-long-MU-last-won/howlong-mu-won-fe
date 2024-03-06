@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 // import styles from './nav-button.module.css';
 import { Button } from '@chakra-ui/react';
-import { hide } from '../../../../redux/slices/navbar/navbar-menu-display.slice';
-import { useAppDispatch } from '../../../../hooks';
+import { hide } from '@/redux/slices/navbar/navbar-menu-display.slice';
+import { useAppDispatch } from '@hooks';
 
 /* eslint-disable-next-line */
 export interface NavButtonProps {

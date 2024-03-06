@@ -2,12 +2,12 @@
 
 import { Flex } from "@chakra-ui/react";
 import { KeyboardEvent } from "react";
-import { useAppSelector, useAppDispatch } from '../../../../hooks';
+import { useAppSelector, useAppDispatch } from '@hooks';
 import {
   setActiveItem,
-} from '../../../../redux/slices/landing/carousel.slice';
-import { setTrackActive, setTrackInActive } from '../../../../redux/slices/landing/track.slice';
-import { setUserDidTab, setUderDidNotTab } from "../../../../redux/slices/landing/item.slice";
+} from '@/redux/slices/landing/carousel.slice';
+import { setTrackActive, setTrackInActive } from '@/redux/slices/landing/track.slice';
+import { setUserDidTab, setUderDidNotTab } from "@/redux/slices/landing/item.slice";
 
 /* eslint-disable-next-line */
 export interface ItemProps {

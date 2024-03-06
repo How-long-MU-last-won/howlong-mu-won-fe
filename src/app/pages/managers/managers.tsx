@@ -1,11 +1,11 @@
 // import styles from './managers.module.css';
 import { Container, Spinner, Heading, Box } from '@chakra-ui/react';
 import ManagerCardDesktop from './manager-card-desktop/manager-card-desktop';
-import { useGetManagersQuery } from '../../../redux/slices/api/api.slice';
+import { useGetManagersQuery } from '@/redux/slices/api/api.slice';
 import { useMediaQuery, useTheme } from '@chakra-ui/react';
 import ManagerCardMobile from './manager-card-mobile/manager-card-mobile';
 import { useEffect } from 'react';
-import { ManagerObject } from '../../../types';
+import { ManagerObject } from '@/types';
 
 /* eslint-disable-next-line */
 export interface ManagersProps {}

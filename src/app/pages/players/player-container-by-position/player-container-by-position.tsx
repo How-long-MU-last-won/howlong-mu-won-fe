@@ -1,6 +1,6 @@
 import { Box, Button, Collapse, SimpleGrid } from '@chakra-ui/react';
 import PlayerCard from '../player-card/player-card';
-import { PlayerObject } from 'src/types';
+import { PlayerObject } from '@/types';
 import { ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
 

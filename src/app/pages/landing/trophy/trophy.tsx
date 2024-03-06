@@ -1,5 +1,5 @@
 // import styles from './trophy.module.css';
-import { useAppSelector } from '../../../../hooks';
+import { useAppSelector } from '@hooks';
 import { Box, Heading, Image, useMediaQuery, useTheme } from '@chakra-ui/react';
 
 /* eslint-disable-next-line */

@@ -6,8 +6,8 @@ import Carousel from './carousel/carousel';
 import Trophy from './trophy/trophy';
 import { Spinner } from '@chakra-ui/react';
 import { useEffect } from 'react';
-import { useGetTrophiesQuery } from '../../../redux/slices/api/api.slice';
-import { TrophyObject } from '../../../types';
+import { useGetTrophiesQuery } from '@/redux/slices/api/api.slice';
+import { TrophyObject } from '@/types';
 
 export interface LandingProps {}
 

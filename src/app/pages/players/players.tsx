@@ -7,9 +7,9 @@ import {
 } from '@chakra-ui/react';
 import PlayerModal from './player-modal/player-modal';
 import PlayerContainerByPosition from './player-container-by-position/player-container-by-position';
-import { useAppSelector } from '../../../hooks';
-import { useGetPlayersQuery } from '../../../redux/slices/api/api.slice';
-import { PlayerObject } from '../../../types';
+import { useAppSelector } from '@hooks';
+import { useGetPlayersQuery } from '@/redux/slices/api/api.slice';
+import { PlayerObject } from '@/types';
 import PlayerSeach from './player-seach/player-seach';
 import { useEffect } from 'react';
 

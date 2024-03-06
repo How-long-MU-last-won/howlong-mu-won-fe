@@ -12,8 +12,8 @@ import {
   Heading,
   Text,
 } from '@chakra-ui/react';
-import { useAppSelector } from '../../../../hooks';
-import Bold from '../../../components/bold/bold';
+import { useAppSelector } from '@hooks';
+import Bold from '@components/bold/bold';
 import { normalizeSync } from 'normalize-diacritics';
 /* eslint-disable-next-line */
 export interface PlayerModalProps {

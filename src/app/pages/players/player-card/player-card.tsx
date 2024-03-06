@@ -2,8 +2,8 @@
 import { Box, Flex, Heading } from '@chakra-ui/react';
 import { useMemo } from 'react';
 import { PlayerObject } from 'src/types';
-import { useAppDispatch } from '../../../../hooks';
-import { setHighlightedPlayer } from '../../../../redux/slices/players/players.slice';
+import { useAppDispatch } from '@hooks';
+import { setHighlightedPlayer } from '@/redux/slices/players/players.slice';
 import { normalizeSync } from 'normalize-diacritics';
 /* eslint-disable-next-line */
 export interface PlayerCardProps {

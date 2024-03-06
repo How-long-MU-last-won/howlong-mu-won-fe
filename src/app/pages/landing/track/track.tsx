@@ -2,17 +2,17 @@ import { useCallback, useEffect, useRef } from 'react';
 // import styles from './track.module.css';
 import { PanInfo, motion, useAnimation, useMotionValue } from 'framer-motion';
 import { Box, VStack, Flex } from '@chakra-ui/react';
-import { useAppSelector, useAppDispatch } from '../../../../hooks';
+import { useAppSelector, useAppDispatch } from '@hooks';
 import {
   setActiveItem,
   increamentActiveItem,
   decrementActiveItem,
-} from '../../../../redux/slices/landing/carousel.slice';
+} from '@/redux/slices/landing/carousel.slice';
 import {
   setTrackActive,
   setTrackInActive,
   setDragStartPosition,
-} from '../../../../redux/slices/landing/track.slice';
+} from '@/redux/slices/landing/track.slice';
 /* eslint-disable-next-line */
 export interface TrackProps {
   positions: number[];

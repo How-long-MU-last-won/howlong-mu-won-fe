@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
-import Landing from './pages/landing/landing';
-import Players from './pages/players/players';
-import Managers from './pages/managers/managers';
-import NavBar from './components/nav-bar/nav-bar';
-import Footer from './components/footer/footer';
+import Landing from '@/app/pages/landing/landing';
+import Players from '@/app/pages/players/players';
+import Managers from '@/app/pages/managers/managers';
+import NavBar from '@components/nav-bar/nav-bar';
+import Footer from '@components/footer/footer';
 
 export function App() {
 

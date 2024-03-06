@@ -10,7 +10,7 @@ import {
   Link,
   Button,
 } from '@chakra-ui/react';
-import { Bold } from '../../../components/bold/bold';
+import { Bold } from '@components/bold/bold';
 
 /* eslint-disable-next-line */
 export interface ManagerCardMobileProps {

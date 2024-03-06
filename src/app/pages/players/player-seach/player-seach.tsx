@@ -7,15 +7,16 @@ import {
 } from '@chakra-ui/react';
 import { Field, Form, Formik, FieldProps } from 'formik';
 import { Search2Icon } from '@chakra-ui/icons';
-import { setSearchString } from '../../../../redux/slices/players/players.slice';
+import { setSearchString } from '@/redux/slices/players/players.slice';
 
-import { useAppDispatch, useAppSelector } from '../../../../hooks';
+import { useAppDispatch } from '@hooks';
+import { useGetPlayersQuery } from '@/redux/slices/api/api.slice';
 /* eslint-disable-next-line */
 export interface PlayerSeachProps {}
 
 export function PlayerSeach(props: PlayerSeachProps) {
   const dispatch = useAppDispatch();
-  const { isPlayersLoading } = useAppSelector((state) => state.playersState);
+  const { isLoading } = useGetPlayersQuery({});
   return (
     <Box
       pos={'fixed'}
@@ -62,7 +63,7 @@ export function PlayerSeach(props: PlayerSeachProps) {
                       variant="flushed"
                       placeholder="Search"
                       focusBorderColor={'bg.red'}
-                      disabled={isPlayersLoading}
+                      disabled={isLoading}
                     />
                   </InputGroup>
                 </FormControl>

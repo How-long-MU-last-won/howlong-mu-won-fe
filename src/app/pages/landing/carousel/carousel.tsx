@@ -8,12 +8,12 @@ import React, { useEffect, useMemo } from 'react';
 import Slider from '../slider/slider';
 import Item from '../item/item';
 import Track from '../track/track';
-import { useAppSelector, useAppDispatch } from '../../../../hooks';
+import { useAppSelector, useAppDispatch } from '@hooks';
 import {
   setMultiplier,
   setConstraint,
   setItemWidth,
-} from '../../../../redux/slices/landing/carousel.slice';
+} from '@/redux/slices/landing/carousel.slice';
 
 /* eslint-disable-next-line */
 export interface CarouselProps {

@@ -1,15 +1,14 @@
 import { Box, Button, Flex, Progress } from '@chakra-ui/react';
 // import styles from './slider.module.css';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { useBoundingRect } from '../../../../hooks';
+import { useBoundingRect, useAppSelector, useAppDispatch } from '@hooks';
 import { useLayoutEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '../../../../hooks';
 import {
   setSliderWidth,
   increamentActiveItem,
   decrementActiveItem,
-} from '../../../../redux/slices/landing/carousel.slice';
-import { setTrackActive } from '../../../../redux/slices/landing/track.slice';
+} from '@/redux/slices/landing/carousel.slice';
+import { setTrackActive } from '@/redux/slices/landing/track.slice';
 
 /* eslint-disable-next-line */
 export interface SliderProps {

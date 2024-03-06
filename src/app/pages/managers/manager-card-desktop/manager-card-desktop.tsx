@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { useMemo } from 'react';
 import { ManagerObject } from 'src/types';
-import Bold from '../../../components/bold/bold';
+import Bold from '@components/bold/bold';
 // import styles from './manager-card-desktop.module.css';
 
 /* eslint-disable-next-line */

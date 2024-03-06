@@ -4,8 +4,8 @@ import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import {
   hide,
   show,
-} from '../../../redux/slices/navbar/navbar-menu-display.slice';
-import { useAppSelector, useAppDispatch } from '../../../hooks';
+} from '@/redux/slices/navbar/navbar-menu-display.slice';
+import { useAppSelector, useAppDispatch } from '@hooks';
 import NavButton from './nav-button/nav-button';
 
 export interface NavBarProps {}
