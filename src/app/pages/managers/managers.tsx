@@ -1,23 +1,26 @@
 // import styles from './managers.module.css';
 import { Container, Spinner, Heading, Box } from '@chakra-ui/react';
 import ManagerCardDesktop from './manager-card-desktop/manager-card-desktop';
-import { useAppSelector } from '../../../hooks';
-
+import { useGetManagersQuery } from '../../../redux/slices/api/api.slice';
 import { useMediaQuery, useTheme } from '@chakra-ui/react';
 import ManagerCardMobile from './manager-card-mobile/manager-card-mobile';
 import { useEffect } from 'react';
+import { ManagerObject } from '../../../types';
 
 /* eslint-disable-next-line */
 export interface ManagersProps {}
 
 export function Managers(props: ManagersProps) {
-  const { breakpoints } = useTheme();
-  const { managers, isManagersLoading } = useAppSelector(
-    (state) => state.managersState
-  );
+  const {
+    data: managers,
+    isLoading,
+  } = useGetManagersQuery({})
+
   useEffect(() => {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }, []);
+
+  const { breakpoints } = useTheme();
 
   const [isLargerThanLg] = useMediaQuery(`(min-width: ${breakpoints.lg})`);
 
@@ -38,7 +41,7 @@ export function Managers(props: ManagersProps) {
           Some of them were good, some of them might not be ...
         </Heading>
       </Box>
-      {isManagersLoading ? (
+      {isLoading ? (
         <Spinner
           borderWidth={6}
           speed="0.8s"
@@ -49,7 +52,7 @@ export function Managers(props: ManagersProps) {
           size={'xl'}
         />
       ) : (
-        managers.map((manager) => {
+        managers.map((manager: ManagerObject) => {
           if (isLargerThanLg) {
             return <ManagerCardDesktop manager={manager} key={manager.id} />;
           } else {

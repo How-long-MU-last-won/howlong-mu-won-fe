@@ -6,10 +6,10 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import PlayerModal from './player-modal/player-modal';
-
 import PlayerContainerByPosition from './player-container-by-position/player-container-by-position';
 import { useAppSelector } from '../../../hooks';
-import { PlayerObject } from 'src/types';
+import { useGetPlayersQuery } from '../../../redux/slices/api/api.slice';
+import { PlayerObject } from '../../../types';
 import PlayerSeach from './player-seach/player-seach';
 import { useEffect } from 'react';
 
@@ -29,18 +29,18 @@ const filterPlayersByName = (players: PlayerObject[], searchString: string) => {
 };
 
 export function Players(props: PlayersProps) {
+  const { data: players, isLoading } = useGetPlayersQuery({});
+
   useEffect(() => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isPlayersLoading, players, seachString } = useAppSelector(
-    (state) => state.playersState
-  );
-  let filteredPlayers : PlayerObject[];
+  const { seachString } = useAppSelector((state) => state.playersState);
+  let filteredPlayers: PlayerObject[];
   if (seachString) {
     filteredPlayers = filterPlayersByName(players, seachString);
   } else {
-    filteredPlayers = [...players];
+    filteredPlayers = players as PlayerObject[];
   }
 
   return (
@@ -61,7 +61,7 @@ export function Players(props: PlayersProps) {
         </Heading>
       </Box>
       <PlayerSeach />
-      {isPlayersLoading ? (
+      {isLoading ? (
         <Spinner
           borderWidth={6}
           speed="0.8s"

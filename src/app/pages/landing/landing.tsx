@@ -4,18 +4,18 @@
 import { Box, Container, Flex, Heading } from '@chakra-ui/react';
 import Carousel from './carousel/carousel';
 import Trophy from './trophy/trophy';
-import { useAppSelector } from '../../../hooks';
 import { Spinner } from '@chakra-ui/react';
 import { useEffect } from 'react';
+import { useGetTrophiesQuery } from '../../../redux/slices/api/api.slice';
+import { TrophyObject } from '../../../types';
 
 export interface LandingProps {}
 
 export function Landing(props: LandingProps) {
-  const { trophies, isTrophiesLoading } = useAppSelector(
-    (state) => state.landingState
-  );
+  const { data: trophies, isLoading } = useGetTrophiesQuery({});
+
   useEffect(() => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   return (
@@ -37,7 +37,7 @@ export function Landing(props: LandingProps) {
           But when was the last time we actually won one ...
         </Heading>
       </Box>
-      {isTrophiesLoading ? (
+      {isLoading ? (
         <Spinner
           borderWidth={6}
           speed="0.8s"
@@ -49,7 +49,7 @@ export function Landing(props: LandingProps) {
         />
       ) : (
         <Carousel gap={30}>
-          {trophies.map((trophy) => (
+          {trophies.map((trophy: TrophyObject) => (
             <Flex
               className="shadow"
               key={trophy.id}
